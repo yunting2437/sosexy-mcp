@@ -2,6 +2,10 @@
 
 通过 MCP 协议让 Claude 直接控制啵啵贝玩具，支持序列控制和 SSH 远程接入（Windows）。
 
+增加了序列控制，AI 可自行排列震动、吮吸、电流的强度、时间、档位，步骤之间无停顿，AI 无法接受新消息。
+
+**人话版**：可以让 AI 自己写一段频率，完全随机，没有跑完就停不下来，类似于仿制了 APP 的失控模式——并且频率没跑完就没办法和 AI 对话，可以做到「一次对话」。
+
 > 蓝牙协议逆向基于 [51enuxu/sosexy-ble-control](https://github.com/51enuxu/sosexy-ble-control)，在此基础上增加了 MCP 接入、Windows SSH 隧道和序列控制。
 
 ---
