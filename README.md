@@ -149,3 +149,7 @@ stop_all()      → 全部停止
 ## License
 
 MIT
+
+---
+
+> 代码与文档由 [Claude](https://claude.ai) 协助完成
