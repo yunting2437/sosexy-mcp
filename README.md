@@ -152,4 +152,4 @@ MIT
 
 ---
 
-> 代码与文档由 [Claude](https://claude.ai) 协助完成
+> 代码与文档由 [Claude](https://claude.ai) 完成，人类起到了草履虫的作用，有错误概不负责
