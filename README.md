@@ -13,6 +13,7 @@
 | 接入方式 | HTTP API，手动注册 tool | MCP 协议，Claude Code 自动接入 |
 | 平台 | macOS | Windows |
 | 序列控制 | 无 | 有（`run_sequence`） |
+| 失控模式 | 无 | 有（见下方说明） |
 | 多马达同控 | 有 | 有 |
 | 持久 BLE 连接 | 有 | 有 |
 
@@ -120,6 +121,23 @@ ssh -i "C:\path\to\your\key" -N -R 8888:127.0.0.1:8888 user@your-vps.com
 ```
 
 步骤之间无停顿，BLE 连接在序列期间通过 keepalive 保持。
+
+**序列执行期间 Claude 无法接收新消息**——这意味着一旦开始，在跑完之前停不下来。AI 可以自行排列震动、吮吸、微电流的强度、档位和时间，完全由 AI 决定节奏，类似于 APP 的失控模式，且频率没有跑完就无法对话。
+
+示例（从低到高渐进，震动吮吸交替，中间穿插强度落差）：
+
+```json
+[
+  {"channel": "振动", "intensity": 30, "duration": 4},
+  {"channel": "吮吸", "intensity": 50, "duration": 3},
+  {"channel": "振动", "intensity": 60, "duration": 3},
+  {"channel": "吮吸", "intensity": 70, "duration": 2},
+  {"channel": "振动", "intensity": 80, "duration": 2},
+  {"channel": "吮吸", "intensity": 40, "duration": 4},
+  {"channel": "振动", "intensity": 90, "duration": 3},
+  {"channel": "吮吸", "intensity": 80, "duration": 3}
+]
+```
 
 ### 多马达同时控制
 
